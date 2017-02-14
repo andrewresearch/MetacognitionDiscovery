@@ -1,31 +1,13 @@
 # MetacognitionUI
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
+This is a web application written by [Andrew Gibson](http://andrewresearch.net) to support research documented in the following paper:
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Gibson, A., Kirsty, K., and Bruza, P. (2016) [Towards the Discovery of Learner Metacognition From Reflective Writing.](http://epress.lib.uts.edu.au/journals/index.php/JLA/article/view/4545) *Journal of Learning Analytics*, 3(2), 22-36. doi: http://dx.doi.org/10.18608/jla.2016.32.3
 
-## Code scaffolding
+> **ABSTRACT:** Modern society demands renewed attention on the competencies required to best equip students for a dynamic and uncertain future. We present exploratory work based on the premise that metacognitive and reflective competencies are essential for this task. Bringing the concepts of metacognition and reflection together into a conceptual model within which we conceived of them as both a set of similar features, and as a spectrum ranging from the unconscious inner-self through to the conscious external social self. This model was used to guide exploratory computational analysis of 6090 instances of reflective writing authored by undergraduate students. We found the conceptual model to be useful in informing the computational analysis, which in turn showed potential for automating the discovery of metacognitive activity in reflective writing, an approach that holds promise for the generation of formative feedback for students as they work towards developing core 21st century competencies.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+The client application is based on my [Tabbed_UI_Template]() and is written in TypeScript using Angular2 with [angular-cli](https://github.com/angular/angular-cli).
 
-## Build
+The main code for the live demo can be found in ```/src/app/tab1``` with data access and visualisation components located in ```/src/app/shared```.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

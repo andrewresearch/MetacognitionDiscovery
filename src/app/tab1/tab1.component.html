@@ -29,7 +29,8 @@
                     </ul>
                 </div>
                 <div>&nbsp;</div>
-                <textarea id="reflectionEntry" [(ngModel)]="reflection.text"></textarea>
+                <ckeditor [(ngModel)]="reflection.text" [config]="{height: '450px'}"> <!-- [config]="{uiColor: '#666666'}" (change)="onChange($event)" (ready)="onReady($event)" (blur)="onBlur($event)" debounce="500"--> </ckeditor>
+                <!--<textarea id="reflectionEntry" [(ngModel)]="reflection.text"></textarea>-->
                 <div class="row" *ngIf="!analysed"><div class="col-md-12">
                     <p class="small" *ngIf="!reflection.source==''"><b>SOURCE:&nbsp;</b>{{reflection.source}} - <a href="{{reflection.url}}">{{reflection.url}}</a></p>
                 </div></div>

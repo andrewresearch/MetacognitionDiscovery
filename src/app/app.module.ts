@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import {TabsModule,DropdownModule} from 'ng2-bootstrap';
+import { CKEditorModule } from 'ng2-ckeditor';
+//import { CKEditorComponent } from 'ng2-ckeditor/src/ckeditor.component';
+
 import {Tab0Component} from './tab0/tab0.component';
 import {Tab1Component} from './tab1/tab1.component';
 import {Tab2Component} from './tab2/tab2.component';
@@ -17,14 +20,16 @@ import { MetacognitionAppComponent } from './metacognitionApp.component';
       Tab0Component,
       Tab1Component,
       Tab2Component,
-      ChartPieComponent
+      ChartPieComponent //,
+      //CKEditorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
       TabsModule.forRoot(),
-      DropdownModule.forRoot()
+      DropdownModule.forRoot(), //,
+      CKEditorModule
   ],
   providers: [],
   bootstrap: [MetacognitionAppComponent]
