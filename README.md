@@ -10,4 +10,8 @@ The client application is based on my [Tabbed_UI_Template]() and is written in T
 
 The main code for the live demo can be found in ```/src/app/tab1``` with data access and visualisation components located in ```/src/app/shared```.
 
+**NOTE:** This version utilises CKEditor. Before running, download latest version of ckeditor and save as ```/src/assets/ckeditor```.
+
+Run this demo locally with ```ng serve```
+
 
