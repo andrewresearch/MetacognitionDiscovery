@@ -4,7 +4,10 @@ lazy val MetaCogUI = project.in(file("."))
     name := "MetaCogUI",
     version := "2.0.0",
     scalaVersion := "2.12.6",
-    libraryDependencies += "com.thoughtworks.binding" %%% "dom" % "11.0.1",
+    libraryDependencies ++= Seq(
+      "com.thoughtworks.binding" %%% "dom" % "11.0.1",
+      //"com.github.karasiq" %%% "scalajs-bootstrap-v4" % "2.3.2"
+    ),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full),
     crossTarget in fastOptJS := baseDirectory.value / "js"
   ).enablePlugins(ScalaJSPlugin)
