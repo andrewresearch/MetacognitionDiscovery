@@ -10,27 +10,20 @@ object Tab2 {
   @dom
   val content: Binding[Div] =  {
     <div>
-      <div class="container">
+      <div class="container-fluid">
         <div class = "row">
-          <div class="col-md-12">
+          <div class="col">
             <p>
-              This app, written by <a href="http://andrewresearch.net">Andrew Gibson</a>, is one of a suite of apps (including <a href="http://goingok.org/">GoingOK</a>), and is part of the realtime component of a <a href="http://lambda-architecture.net">Lambda Architecture</a>, designed for the <a href="http://andrewresearch.net/project/RWA/">analysis of reflective writing.</a>
+              This app is written by <a href="http://andrewresearch.net">Andrew Gibson</a> in Scala and uses Scala.js and Binding.scala to produce a client side application served from AWS S3.
             </p>
             <p>
-              Server-side code is a REST API written in <a href="http://www.scala-lang.org">Scala</a> using <a href="http://finagle.github.io/blog/">Finagle</a>/<a href="https://github.com/finagle/finch/blob/master/docs/index.md">Finch</a>, <a href="https://github.com/travisbrown/circe">Circe</a>, and <a href="http://factorie.cs.umass.edu">Factorie</a> libraries
+              The actual analysis is completed by the Text Analytics Pipeline (TAP) which is hosted on AWS ECS.
             </p>
             <p>
-              Client-side is written in HTML and TypeScript using <a href="https://angular.io">Angular</a> with <a href="http://getbootstrap.com">Bootstrap</a> CSS, and <a href="http://d3js.org">d3.js</a> for data visualisations.
+              This web application (and TAP) are both open source licensed under the Apache 2.0 Licence. Please see my <a href="https://github.com/andrewresearch">GitHub (AndrewResearch) page</a> for links to these and other software projects.
             </p>
             <p>
-              This web application is open source. The API code is available at <a href="https://github.com/andrewresearch/ReflectivePhrases">ReflectivePhrases (GitHub) </a> and the client code is available at <a href="https://github.com/andrewresearch/Metacognition_UI">Metacognition_UI (GitHub) </a>. Other software is available from my <a href="https://github.com/andrewresearch">GitHub (AndrewResearch) page.</a>
-            </p>
-            <p>
-              If you're interested in my work, please <a href="https://twitter.com/AndrewResearch">Follow @AndrewResearch</a>
-
-            </p>
-            <p>
-              My home page is <a href="http://andrewresearch.net">AndrewResearch.net</a> and my webapps and API's are hosted at <a href="http://nlytx.io">nlytx.io</a>
+              My home page is <a href="http://andrewresearch.net">AndrewResearch.net</a> and my natural language analytics apps are hosted at <a href="http://nlytx.io">nlytx.io</a>
             </p>
           </div>
          </div>

@@ -1,8 +1,7 @@
 package io.nlytx
 
-import com.thoughtworks.binding.{Binding, dom}
+import com.thoughtworks.binding.dom
 import org.scalajs.dom.document
-import org.scalajs.dom.html.Div
 
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 

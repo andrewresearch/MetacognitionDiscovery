@@ -5,6 +5,7 @@ import com.thoughtworks.binding.Binding.{Var, Vars}
 object DataStore {
 
   val reflectionData = Var[Reflection](Reflection("","",""))
+  val queryData = Var[QueryStats](QueryStats("","",""))
   val countsData = Var[Reflect](Reflect(0,0.0,0,0.0))
   val summaryData = Var[Summary](Summary(Map(),Map()))
   val tagsData = Vars.empty[Coded]
@@ -16,9 +17,10 @@ object DataStore {
   import upickle.default.{ReadWriter => RW, macroRW}
 
   case class Reflection(text:String,source:String,url:String)
+  case class QueryStats(timestamp:String, querytime:String, message:String)
   case class Reflect(wordCount:Int,avgWordLength:Double,sentenceCount:Int,avgSentenceLength:Double)
   case class Summary(metaTagSummary:Map[String,Int],phraseTagSummary:Map[String,Int])
-  case class Coded(sentence:String,phrases:Vector[String],subTags:Vector[String],metaTags:Vector[String])
+  case class Coded(sentence:String,phrases:Vector[String],subTags:Vector[String],metaTags:Vector[String],index:Int = -1)
 
 
   implicit def rwrefn: RW[Reflection] = macroRW

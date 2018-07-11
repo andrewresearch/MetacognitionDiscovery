@@ -23,6 +23,10 @@ object DataService {
     DataStore.showDetails.value = !DataStore.showDetails.value
   }
 
+  def toggleData = {
+    DataStore.showData.value = !DataStore.showData.value
+  }
+
 
   def getText(refType:String) :Unit = {
     val url = s"http://localhost:63342/MetaCogUI/assets/data/${refType}.json"
@@ -55,6 +59,7 @@ object DataService {
         val queryTime = queryData("querytime")
         val message = queryData("message")
         println(s"reflectExpressions query @ $timestamp completed in $queryTime ms with message: $message")
+        DataStore.queryData.value = DataStore.QueryStats(timestamp.toString(),queryTime.toString(),message.toString())
         val analytics = queryData("analytics")
         handleAnalytics(analytics)
         analysed.value = true
@@ -69,14 +74,15 @@ object DataService {
   def handleAnalytics(analytics:Js.Value): Unit = {
     //println(s"Result: ${analytics}")
     val counts = analytics("counts")
-    println(s"COUNTS: $counts")
+    //println(s"COUNTS: $counts")
     countsData.value = read[Reflect](counts)
     val summary = analytics("summary")
-    println(s"SUMMARY: $summary")
+    //println(s"SUMMARY: $summary")
     summaryData.value = read[Summary](summary)
     val tags = analytics("tags")
-    println(s"TAGS: $tags")
-    tagsData.value ++= read[List[Coded]](tags)
+    //println(s"TAGS: $tags")
+    val coded = read[List[Coded]](tags)
+    tagsData.value ++= coded.zipWithIndex.map{ case(c:Coded,i:Int) => Coded(c.sentence,c.phrases,c.subTags,c.metaTags,i+1) }
   }
 
 
@@ -138,32 +144,6 @@ object DataService {
       "variables" -> variables
     )
   }
-  /*
 
-
-    markupText(text) {
-        if(text) {
-            let phrases = text.phrases;
-            //console.log("phrases: " + JSON.stringify(phrases));
-            let markedUp = text.sentence;
-
-            let escape = function(s) {
-                return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-            };
-
-            for (let phrase of phrases) {
-                //console.log("phrase: " + JSON.stringify(phrase));
-                let phraseParts = phrase.split('[');
-                let phraseText = phraseParts[0];
-                let phraseType = phraseParts[1].split(',')[0];
-                markedUp = markedUp.replace(new RegExp(escape(phraseText), "ig"), "<span class=\"" + phraseType + "\">" + phraseText + "</span>");
-                //console.log("markedUp: " + markedUp);
-            }
-            return markedUp;
-        } else {
-            return "";
-        }
-    }
-   */
 
 }

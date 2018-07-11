@@ -9,13 +9,13 @@ object MainContainer {
 
   @dom
   def build: Binding[Div] = {
-    <div class="container">
+    <div class="container-fluid">
       <div>
         <h3 class="text-muted">{title}</h3>
       </div>
 
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col">
           <div>
 
             <ul class="nav nav-tabs" id="myTab" data:role="tablist">
@@ -23,16 +23,16 @@ object MainContainer {
                 <a class="nav-link active" id="home-tab" data:data-toggle="tab" href="#home" data:role="tab" data:aria-controls="home" data:aria-selected="true">{Tab0.name}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data:data-toggle="tab" href="#profile" data:role="tab" data:aria-controls="profile" data:aria-selected="false">Profile</a>
+                <a class="nav-link" id="demo-tab" data:data-toggle="tab" href="#demo" data:role="tab" data:aria-controls="demo" data:aria-selected="false">{Tab1.name}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data:data-toggle="tab" href="#contact" data:role="tab" data:aria-controls="contact" data:aria-selected="false">Contact</a>
+                <a class="nav-link" id="info-tab" data:data-toggle="tab" href="#info" data:role="tab" data:aria-controls="info" data:aria-selected="false">{Tab2.name}</a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="home" data:role="tabpanel" data:aria-labelledby="home-tab">{Tab0.content.bind}</div>
-              <div class="tab-pane fade" id="profile" data:role="tabpanel" data:aria-labelledby="profile-tab">{Tab1.content.bind}</div>
-              <div class="tab-pane fade" id="contact" data:role="tabpanel" data:aria-labelledby="contact-tab">{Tab2.content.bind}</div>
+              <div class="tab-pane fade" id="demo" data:role="tabpanel" data:aria-labelledby="demo-tab">{Tab1.content.bind}</div>
+              <div class="tab-pane fade" id="info" data:role="tabpanel" data:aria-labelledby="info-tab">{Tab2.content.bind}</div>
             </div>
 
           </div>

@@ -1,27 +1,4 @@
-import { Component, OnInit,Input,ElementRef,ViewEncapsulation } from '@angular/core';
 import * as d3 from 'd3';
-
-@Component({
-  selector: 'chart-pie',
-  templateUrl: './chart-pie.component.html',
-  styleUrls: ['./chart-pie.component.css'],
-  encapsulation: ViewEncapsulation.None
-})
-export class ChartPieComponent implements OnInit {
-
-  @Input('chartdata') chartdata;
-  //chartData = { "generalPreposition": 7, "manner": 5, "consider": 21, "outcome": 15, "selfPossessive": 32, "emotive": 4, "temporal": 2, "definite": 23, "generalPronounVerb": 116, "pertains": 90, "selfReflexive": 14, "none": 7, "possible": 8, "compare": 2, "groupPossessive": 6, "anticipate": 6, "othersPossessive": 4 };
-
-  constructor(private elRef: ElementRef) { }
-
-  ngOnInit() {
-
-  }
-
-  ngAfterViewInit() {
-    this.buildChart(this.elRef);
-    //console.log("chartdata is: "+this.chartdata);
-  }
 
   public buildChart(elRef: ElementRef) {
 

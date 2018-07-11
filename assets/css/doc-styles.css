@@ -13,16 +13,63 @@ body, input[text], button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.footer p {
+    color: darkgray;
+    font-size: small;
+}
+
+#myTab {
+    margin-top: 1em;
+}
+
+#myTabContent {
+    margin-top: 2em;
+}
+
+blockquote {
+    margin-left: 6em;
+    margin-right: 6em;
+}
+
+.description-text {
+    margin-top: 1em;
+}
 
 button {
   font-family: Calibri, Helvetica, Arial, sans-serif;
   font-weight: bolder;
 }
+
+#info-section {
+    margin-bottom: 1em;
+}
+
+#instructions {
+    padding: 1em;
+}
+
+#raw-data {
+    padding: 1em;
+}
+
+.phrase-badge {
+    font-size: 1em;
+}
+
+.meta-badge {
+    color: white;
+}
+
 .table-sroll {
   height: 61em;
   overflow-y: auto;
 }
 
+#editor {
+    min-width: 100%;
+    min-height: 20em;
+    padding: 1em;
+}
 
 #reflectionEntry {
   min-height: 20em;

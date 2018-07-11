@@ -1,8 +1,7 @@
 package io.nlytx
 
 import com.thoughtworks.binding.{Binding, dom}
-import org.scalajs.dom.Event
-import org.scalajs.dom.html.{Div, Table}
+import org.scalajs.dom.html.Div
 
 
 object Tab1 {
@@ -14,12 +13,10 @@ object Tab1 {
   @dom
   val content: Binding[Div] =  {
     <div>
-      <div class="container">
+      <div class="container-fluid">
         {
           if(DataStore.analysed.bind) {
-            //Tab1_Results.detailsDisplay.bind
             Tab1_Results.resultsDisplay.bind
-
           } else {
             Tab1_Entry.dataEntry().bind
           }
