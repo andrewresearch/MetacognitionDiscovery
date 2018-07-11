@@ -31,7 +31,7 @@ object Tab1_Entry {
         </div>
       </div>
       <div class="row">
-        <div class="col-1">
+        <div class="col-2">
           <div class="btn-group">
             <button class="btn btn-outline-dark" type="button" onclick={ event: Event => DataService.analyseText()}>
               analyse
@@ -53,6 +53,11 @@ object Tab1_Entry {
           <div>
             { sourceDisplay.bind }
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">&nbsp;</div>
+        <div class="col">
           <div>
               <textarea name="text" id="editor">{DataStore.reflectionData.bind.text}</textarea>
           </div>

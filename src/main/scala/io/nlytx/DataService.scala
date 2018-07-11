@@ -29,7 +29,7 @@ object DataService {
 
 
   def getText(refType:String) :Unit = {
-    val url = s"http://localhost:63342/MetaCogUI/assets/data/${refType}.json"
+    val url = s"http://nlytx.io/metacognition/assets/data/${refType}.json"
     println(s"Getting text from $url")
     val request = HttpRequest(url)
     val response = request.send()
@@ -46,7 +46,7 @@ object DataService {
   }
 
   def analyseText(): Unit = {
-    val url = s"http://tap.is-qut.nlytx.io/graphql"
+    val url = s"http://tap.nlytx.io/graphql"
     println(s"Posting text to tap at $url")
     val request = HttpRequest(url)
     val response = request.post(graphqlQuery(reflectionData.value.text))
