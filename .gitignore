@@ -34,3 +34,6 @@ testem.log
 Thumbs.db
 /src/assets/ckeditor/
 typings.json
+/assets/js/metacogui-fastopt.js.map
+/assets/js/metacogui-fastopt.js
+/assets/js/metacogui-opt.js

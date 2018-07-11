@@ -24,13 +24,13 @@ object Tab0 {
         </div>
         <div class="row">
           <div class="col-md-6">
-            <img src="images/ReflectionMetacognitionSpectrum.jpg" class="img-fluid" alt="Reflection and metacognition as a spectrum" />
+            <img src="assets/images/ReflectionMetacognitionSpectrum.jpg" class="img-fluid" alt="Reflection and metacognition as a spectrum" />
               <p class="text-center"><b>Figure 1: Metacognition and reflection as a spectrum</b></p>
               <p>&nbsp;</p>
 
             </div>
             <div class="col-md-6">
-              <img src="images/ReflectionMetacognitionComponents.jpg" class="img-fluid" alt="Reflection and metacognition common components" />
+              <img src="assets/images/ReflectionMetacognitionComponents.jpg" class="img-fluid" alt="Reflection and metacognition common components" />
                 <p class="text-center"><b>Figure 2: Common features of metacognition and reflection</b></p>
                 <p>&nbsp;</p>
                 <p></p>
@@ -42,13 +42,13 @@ object Tab0 {
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <img src="images/ComponentDefinitions.jpg" class="img-fluid" alt="Definitions of model components" />
+                  <img src="assets/images/ComponentDefinitions.jpg" class="img-fluid" alt="Definitions of model components" />
                     <p class="text-center"><b>Table  1: Definitions of the reflection/metacognition features</b></p>
                     <p>&nbsp;</p>
 
                   </div>
                   <div class="col-md-6">
-                    <img src="images/PhraseTagMetaTagRelationships.jpg" class="img-fluid" alt="Relationships of computational phraseTags to model metaTags" />
+                    <img src="assets/images/PhraseTagMetaTagRelationships.jpg" class="img-fluid" alt="Relationships of computational phraseTags to model metaTags" />
                       <p class="text-center"><b>Table 2: Common features of metacognition and reflection</b></p>
                       <p>&nbsp;</p>
                       <p></p>
@@ -56,7 +56,7 @@ object Tab0 {
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <img src="images/PhraseTagPatterns.jpg" class="img-fluid" alt="Grammatical patterns of phraseTags" />
+                      <img src="assets/images/PhraseTagPatterns.jpg" class="img-fluid" alt="Grammatical patterns of phraseTags" />
                         <p class="text-center"><b>Table  3: Grammatical patterns of phraseTags</b></p>
                         <p>&nbsp;</p>
 
