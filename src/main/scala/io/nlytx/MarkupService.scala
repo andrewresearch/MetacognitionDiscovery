@@ -19,14 +19,16 @@ object MarkupService {
   def markupSentence(codedSentence:Coded): String = markup(codedSentence.sentence,codedSentence.phrases)
 
   private def markup(text:String,phrases:Vector[String]):String = {
-    //println(s"phrases: $phrases")
-    val phraseParts = phrases.head.split('[')
-    val phraseText = phraseParts(0)
-    val phraseType = phraseParts(1).split(',')(0)
-    val newText = if(phraseType!="generalPronounVerb") {
-      text.replaceAll(phraseText,s"""<span class="badge phrase-badge $phraseType" >$phraseText</span>""")
-    } else { text }
-    if (phrases.tail.isEmpty) newText else markup(newText,phrases.tail)
+    if(phrases.isEmpty) { text }
+    else {
+      val phraseParts = phrases.head.split('[')
+      val phraseText = phraseParts(0)
+      val phraseType = phraseParts(1).split(',')(0)
+      val newText = if(phraseType!="generalPronounVerb") {
+        text.replaceAll(phraseText,s"""<span class="badge phrase-badge $phraseType" >$phraseText</span>""")
+      } else { text }
+      if (phrases.tail.isEmpty) newText else markup(newText,phrases.tail)
+    }
   }
 
   def markupMetaTags(codedSentence:Coded):String = {

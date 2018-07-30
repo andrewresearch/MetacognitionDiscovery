@@ -5,7 +5,7 @@ import org.scalajs.dom.html.Div
 object MainContainer {
 
   val title = "Towards the Discovery of Learner Metacognition From Reflective Writing"
-  val footer = "\u24D2 Andrew Gibson 2016-2018"
+  val footer = s"\u24D2 Andrew Gibson 2016-2018, verions: ${MetaCogUI.currentVersion}"
 
   @dom
   def build: Binding[Div] = {

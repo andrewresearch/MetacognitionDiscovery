@@ -1,8 +1,14 @@
 package io.nlytx
 
+import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.{Binding, dom}
-import org.scalajs.dom.Event
-import org.scalajs.dom.html.Div
+import io.nlytx.DataStore.reflectionData
+import org.scalajs.dom.ext.KeyCode
+import org.scalajs.dom.{Event, KeyboardEvent, document, html}
+import org.scalajs.dom.html.{Div, Input, TextArea}
+import org.scalajs.dom.raw.HTMLTextAreaElement
+
+import scala.scalajs.js
 
 object Tab1_Entry {
 
@@ -12,6 +18,7 @@ object Tab1_Entry {
     case tt:String =>
       println(s"Clicked on: $tt")
       DataService.getText(tt)
+
     case _ => println("No matching text type")
   }
 
@@ -33,7 +40,7 @@ object Tab1_Entry {
       <div class="row">
         <div class="col-2">
           <div class="btn-group">
-            <button class="btn btn-outline-dark" type="button" onclick={ event: Event => DataService.analyseText()}>
+            <button class="btn btn-outline-dark" type="button" onclick={ event: Event =>  DataService.analyseText()}>
               analyse
             </button>
             <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data:data-toggle="dropdown" data:aria-haspopup="true" data:aria-expanded="false">
@@ -59,7 +66,7 @@ object Tab1_Entry {
         <div class="col-1">&nbsp;</div>
         <div class="col">
           <div>
-              <textarea name="text" id="editor">{DataStore.reflectionData.bind.text}</textarea>
+              { textArea.bind }
           </div>
         </div>
       </div>
@@ -84,9 +91,42 @@ object Tab1_Entry {
   }
 
   @dom
-  def sourceDisplay: Binding[Div] = if(DataStore.reflectionData.bind.text!="") {
+  def textArea: Binding[TextArea] = {
+    val textAreaChangeHandler = { event: Event =>
+      val ta:HTMLTextAreaElement = document.getElementById("editor").asInstanceOf[HTMLTextAreaElement]
+      val data = ta.value
+      println("onFocusOut")
+      println(s"Data: $data")
+      DataStore.reflectionData.text.value = data
+    }
+    <textarea name="text-area" id="editor" value={DataStore.reflectionData.text.bind} onfocusout={textAreaChangeHandler}></textarea>
+  }
+//
+//  @dom
+//  def textInput: Binding[Div] = {
+//    //val logs = Vars("Input code:")
+//    val keyDownHandler = { event: KeyboardEvent =>
+//      (event.currentTarget, event.keyCode) match {
+//        case (input: html.Input, KeyCode.Enter) =>
+//          event.preventDefault()
+//          DataStore.reflectionData.text.value = input.value
+////          logs.get += input.value
+////          logs.get += js.eval(input.value).toString
+//          //input.value = ""
+//        case _ =>
+//      }
+//    }
+//    <div>
+//      <input type="text" onkeydown={ keyDownHandler }/>
+//    </div>
+//  }
+
+  //<input name="text-input" id="text-in" value={DataStore.reflectionData.text.bind}></input>
+
+  @dom
+  def sourceDisplay: Binding[Div] = if(DataStore.reflectionData.text.bind!="") {
     <div class="col">
-      <p class="small"><b>SOURCE:&nbsp;</b>{DataStore.reflectionData.bind.source} - <a href="{DataService.reflectionData.bind.url}">{DataStore.reflectionData.bind.url}</a></p>
+      <p class="small"><b>SOURCE:&nbsp;</b>{DataStore.reflectionData.source.bind} - <a href="{DataService.reflectionData.bind.url}">{DataStore.reflectionData.url.bind}</a></p>
     </div>
   } else {
     <div></div>
