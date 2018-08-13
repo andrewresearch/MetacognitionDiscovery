@@ -2,7 +2,7 @@
 lazy val MetaCogUI = project.in(file("."))
   .settings(
     name := "MetacognitionDiscovery",
-    version := "2.0.6",
+    version := "2.0.7",
     scalaVersion := "2.12.6",
     libraryDependencies ++= Seq(
       "com.thoughtworks.binding" %%% "dom" % "11.0.1",

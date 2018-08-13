@@ -25,7 +25,7 @@ object MarkupService {
       val phraseText = phraseParts(0)
       val phraseType = phraseParts(1).split(',')(0)
       val newText = if(phraseType!="generalPronounVerb") {
-        text.replaceAll(phraseText,s"""<span class="badge phrase-badge $phraseType" >$phraseText</span>""")
+        text.replaceAll("(?i)" +phraseText,s"""<span class="badge phrase-badge $phraseType" >$phraseText</span>""")
       } else { text }
       if (phrases.tail.isEmpty) newText else markup(newText,phrases.tail)
     }
