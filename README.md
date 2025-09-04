@@ -1,3 +1,5 @@
+**Note that this project is no longer active**
+
 # MetacognitionUI
 
 This is a web application written by [Andrew Gibson](http://andrewresearch.net) to support research documented in the following paper:
